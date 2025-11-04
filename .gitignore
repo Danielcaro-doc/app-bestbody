@@ -1,96 +1,50 @@
 # =====================================
-# 🔹 Node & dependencies
+# 🔹 Node & dependencies (básico)
 # =====================================
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
-.pnpm-debug.log*
 
 # =====================================
-# 🔹 Expo specific
+# 🔹 Expo specific (mínimo)
 # =====================================
 .expo/
 .expo-shared/
-dist/
-web-build/
-.expo-dev/
-.expo-settings.json
 
 # =====================================
-# 🔹 Build outputs
+# 🔹 Build outputs (solo los esenciales)
 # =====================================
 android/app/build/
 ios/build/
 ios/Pods/
-ios/Podfile.lock
-android/.gradle/
-android/.idea/
-android/local.properties
-*.apk
-*.aab
-*.app.dSYM.zip
-*.app.dSYM
-*.xcworkspace
 
 # =====================================
-# 🔹 Metro bundler cache
-# =====================================
-.metro/
-.metro-cache/
-metro-cache/
-.metro-health-check*
-
-# =====================================
-# 🔹 React Native packager
-# =====================================
-packager-info.json
-react-native-debugger.json
-
-# =====================================
-# 🔹 macOS / Linux / Windows system files
+# 🔹 Sistema operativo
 # =====================================
 .DS_Store
 Thumbs.db
-ehthumbs.db
 Desktop.ini
-$RECYCLE.BIN/
-Icon?
-._*
 
 # =====================================
-# 🔹 Environment files
+# 🔹 Environment files (sensibles)
 # =====================================
 .env
 .env.local
-.env.development
-.env.development.local
-.env.production
 .env.production.local
-.env.test
-.env.test.local
-.env*.local
 
 # =====================================
-# 🔹 Logs & temp
+# 🔹 Logs
 # =====================================
 *.log
-*.tmp
-*.temp
-*.bak
-*.swp
-*.swo
-*.orig.*
 
 # =====================================
-# 🔹 Credentials & keys
+# 🔹 Credenciales (importante mantener)
 # =====================================
 *.jks
 *.p8
 *.p12
 *.key
-*.pem
 *.mobileprovision
 *.der
 *.csr
