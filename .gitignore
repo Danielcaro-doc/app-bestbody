@@ -1,0 +1,129 @@
+# =====================================
+# 🔹 Node & dependencies
+# =====================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# =====================================
+# 🔹 Expo specific
+# =====================================
+.expo/
+.expo-shared/
+dist/
+web-build/
+.expo-dev/
+.expo-settings.json
+
+# =====================================
+# 🔹 Build outputs
+# =====================================
+android/app/build/
+ios/build/
+ios/Pods/
+ios/Podfile.lock
+android/.gradle/
+android/.idea/
+android/local.properties
+*.apk
+*.aab
+*.app.dSYM.zip
+*.app.dSYM
+*.xcworkspace
+
+# =====================================
+# 🔹 Metro bundler cache
+# =====================================
+.metro/
+.metro-cache/
+metro-cache/
+.metro-health-check*
+
+# =====================================
+# 🔹 React Native packager
+# =====================================
+packager-info.json
+react-native-debugger.json
+
+# =====================================
+# 🔹 macOS / Linux / Windows system files
+# =====================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+Icon?
+._*
+
+# =====================================
+# 🔹 Environment files
+# =====================================
+.env
+.env.local
+.env.development
+.env.development.local
+.env.production
+.env.production.local
+.env.test
+.env.test.local
+.env*.local
+
+# =====================================
+# 🔹 Logs & temp
+# =====================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig.*
+
+# =====================================
+# 🔹 Credentials & keys
+# =====================================
+*.jks
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+*.der
+*.csr
+*.crt
+
+# =====================================
+# 🔹 IDE & Editor settings
+# =====================================
+.vscode/
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# =====================================
+# 🔹 TypeScript
+# =====================================
+*.tsbuildinfo
+
+# =====================================
+# 🔹 Misc
+# =====================================
+coverage/
+coverage-final.json
+.expo-source-maps/
+*.map
+*.pid
+*.seed
+*.pid.lock
+*.tar.gz
+
+# =====================================
+# 🔹 Expo credentials / signing (optional)
+# =====================================
+credentials.json
