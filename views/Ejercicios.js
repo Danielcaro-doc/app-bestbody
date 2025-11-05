@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Picker } from '@react-native-picker/picker';
+import RNPickerSelect from 'react-native-picker-select';
 import { StyleSheet, TouchableOpacity, Text, View, Image, ScrollView, ImageBackground, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import axiosInstance from '../api/axiosConfig';
@@ -71,7 +71,7 @@ export default function Ejercicios() {
   const ejerciciosFiltrados = categoriaSeleccionada || maquinaSeleccionada
     ? ejercicios.filter(ejercicio =>
         (categoriaSeleccionada ? ejercicio.grupos_ejercicios_id === categoriaSeleccionada.id : true) &&
-        (maquinaSeleccionada ? ejercicio.maquinas_ejercicios_id === maquinaSeleccionada.id : true)
+        (maquinaSeleccionada ? ejercicio.maquinas_ejercicios_id === maquinaSeleccionada : true)
       )
     : ejercicios;
 
@@ -89,16 +89,20 @@ export default function Ejercicios() {
           <TouchableOpacity onPress={limpiarFiltros} style={styles.btnLimpiarFiltros}>
             <Text style={styles.btnLimpiarFiltrosText}>Limpiar Filtros</Text>
           </TouchableOpacity>
-          <Picker
-            style={styles.selectEquipo}
-            selectedValue={maquinaSeleccionada}
-            onValueChange={(itemValue) => setMaquinaSeleccionada(itemValue)}
-          >
-            <Picker.Item label="Seleccione una máquina" value={null} />
-            {maquinas.map((maquina) => (
-              <Picker.Item key={maquina.id} label={maquina.nombre} value={maquina} />
-            ))}
-          </Picker>
+          <View style={styles.selectWrapper}>
+            <RNPickerSelect
+              onValueChange={(value) => setMaquinaSeleccionada(value)}
+              items={maquinas.map((maquina) => ({ label: maquina.nombre, value: maquina.id }))}
+              value={maquinaSeleccionada}
+              placeholder={{ label: 'Seleccione una máquina', value: null }}
+              useNativeAndroidPickerStyle={false}
+              style={{
+                inputIOS: styles.selectInput,
+                inputAndroid: styles.selectInput,
+                placeholder: styles.selectPlaceholder,
+              }}
+            />
+          </View>
         </View>
 
         {/* CATEGORIAS */}
@@ -247,13 +251,20 @@ const styles = StyleSheet.create({
       marginTop: 10,
       marginBottom: 10,
     },
-    selectEquipo: {
+    selectWrapper: {
       backgroundColor: '#fff',
-      padding: 10,
       borderRadius: 90,
-      fontSize: 15,
-      marginBottom: 2,
       width: '65%',
+      height: 40,
+      paddingHorizontal: 12,
+      justifyContent: 'center',
+    },
+    selectInput: {
+      fontSize: 15,
+      color: '#737C98',
+    },
+    selectPlaceholder: {
+      color: '#737C98',
     },
     contentFilter: {
       width: '100%',

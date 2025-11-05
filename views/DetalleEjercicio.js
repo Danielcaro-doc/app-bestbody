@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Swiper from 'react-native-swiper';
-import Gif from 'react-native-gif';
 import Repetitions from '../assets/icons/Repetitions';
 import Sets from '../assets/icons/Sets';
 import Machine from '../assets/icons/Machine';
@@ -9,6 +8,8 @@ import Rest from '../assets/icons/Rest';
 import HTMLView from 'react-native-htmlview';
 import * as FileSystem from 'expo-file-system';
 import { Ionicons } from '@expo/vector-icons';
+import { Image } from 'expo-image';
+
 
 const DetalleEjercicio = ({ route }) => {
   const { ejercicio } = route.params;
@@ -71,11 +72,13 @@ const DetalleEjercicio = ({ route }) => {
         >
           {links.map((link, index) => (
             <View key={index} style={styles.slide}>
-              <Gif
-                style={styles.portada}
-                source={{ uri: `https://app.bestbodygym.com/${link}` }}
-                onLoad={() => handleLoad(index)}
-              />
+         <Image
+  source={{ uri: `https://app.bestbodygym.com/${link}` }}
+  style={styles.portada}
+  contentFit="cover"
+  transition={1000}
+/>
+
               <TouchableOpacity
                 style={styles.downloadButton}
                 onPress={() => downloadGif(`https://app.bestbodygym.com/${link}`, index)}
